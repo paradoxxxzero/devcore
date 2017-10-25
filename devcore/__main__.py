@@ -5,8 +5,9 @@ import semver
 
 
 def bump(project_name, level, dry, about_file_path):
-    about_fn = os.path.abspath(about_file_path or os.path.join(
-        project_name, "__about__.py"))
+    about_fn = os.path.abspath(
+        about_file_path or os.path.join(project_name, "__about__.py")
+    )
     with open(about_fn) as f:
         about_file = f.read()
     about = {}
@@ -28,19 +29,22 @@ def bump(project_name, level, dry, about_file_path):
 parser = ArgumentParser(prog='devcore')
 parser.add_argument('--project_name', default=os.getenv('PROJECT_NAME'))
 subparsers = parser.add_subparsers(
-    title='Commands', description="Command to run",
-    help='Available commands')
+    title='Commands', description="Command to run", help='Available commands'
+)
 
 parser_bump = subparsers.add_parser('bump', help="Bump project version")
 parser_bump.add_argument(
-    'level', choices=['major', 'minor', 'patch'], nargs='?',
-    default='patch')
+    'level', choices=['major', 'minor', 'patch'], nargs='?', default='patch'
+)
 parser_bump.add_argument(
-    '--dry', action='store_true',
-    help="Return version without editing about file.")
+    '--dry',
+    action='store_true',
+    help="Return version without editing about file."
+)
 parser_bump.add_argument(
     '--about-file-path',
-    help=f'Path to __about__.py if different from <project_name>/__about__.py')
+    help=f'Path to __about__.py if different from <project_name>/__about__.py'
+)
 parser_bump.set_defaults(func=bump)
 
 

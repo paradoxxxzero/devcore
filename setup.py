@@ -3,12 +3,11 @@
 
 import os
 
-
 from setuptools import find_packages, setup
 
 about = {}
-with open(os.path.join(
-        os.path.dirname(__file__), "devcore", "__about__.py")) as f:
+with open(os.path.join(os.path.dirname(__file__), "devcore",
+                       "__about__.py")) as f:
     exec(f.read(), about)
 
 setup(
@@ -23,20 +22,11 @@ setup(
     packages=find_packages(),
     provides=['devcore'],
     install_requires=[
-        'log-colorizer-hook',
-        'flask-wdb-hook',
-        'wdb',
-        'isort',
-        'flake8',
-        'importmagic',
-        'jedi',
-        'cutter',
-        'better-exceptions-hook',
-        'semver'
+        'python-language-server', 'log-colorizer-hook', 'flask-wdb-hook',
+        'wdb', 'isort', 'importmagic', 'cutter', 'better-exceptions', 'semver',
+        'python-language-server'
     ],
     entry_points={
-        'console_scripts': [
-            'devcore=devcore.__main__:main',
-        ],
+        'console_scripts': ['devcore=devcore.__main__:main', ],
     },
 )
