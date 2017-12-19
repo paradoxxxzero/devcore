@@ -23,8 +23,8 @@ setup(
     provides=['devcore'],
     install_requires=[
         'python-language-server', 'log-colorizer-hook', 'flask-wdb-hook',
-        'wdb', 'isort', 'importmagic', 'cutter', 'better-exceptions', 'semver',
-        'python-language-server', 'pyls-isort'
+        'wdb', 'isort', 'importmagic3', 'cutter', 'better-exceptions',
+        'semver', 'python-language-server', 'pyls-isort'
     ],
     entry_points={
         'console_scripts': ['devcore=devcore.__main__:main', ],
