@@ -1,5 +1,5 @@
 __title__ = "devcore"
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 
 __summary__ = "Meta package for python development environment"
 __uri__ = "https://github.com/paradoxxxzero/devcore"
